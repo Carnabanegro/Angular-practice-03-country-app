@@ -1,0 +1,25 @@
+<table class="table table-dark table-striped">
+            <thead class="text-center">
+                <tr>
+                    <th>#</th>
+                    <th>Bandera</th>
+                    <th>Nombre</th>
+                    <th>Poblacion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr *ngFor="let d of data; let i=index">
+                    <td >{{i+1}}</td>
+                    <td>
+                        <img class="small-flag" [src]="d.flags.png">
+                    </td>
+                    <td>{{d.name.common}}</td>
+                    <td>{{d.population | number }}</td>
+                    <td>
+                        <a [routerLink]="['/paises', d.cca2]">Ver ...</a>
+                    </td>
+                </tr>
+            </tbody>
+</table>
+ 

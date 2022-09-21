@@ -1,0 +1,20 @@
+<div *ngIf="!pais" class="alert alert-primary">Cargando espere por favor...</div>
+
+<div *ngIf="pais" class="container vh-100 row justify-content-center align-content-center bg-black p-3 gap-4 rounded">
+    
+    <div class="col row justify-content-center align-content-center">
+        <img class="big-flag" [src]="pais.flags.png" alt="">
+    </div>
+
+    <div class="row col justify-content-center align-content-center">
+        <ul>
+            <li>Nombre : {{pais.name.common}}</li>
+            <li>Capital: {{pais.capital[0]}}</li>
+            <li>Poblacion: {{pais.population | number}}</li>
+            <li>Region: {{pais.region}}</li>
+            <li class="text-success" *ngIf="pais.independent">Es un Pais libre</li>
+            <li class="text-danger" *ngIf="!pais.independent">Es una Colonia</li>
+    
+        </ul>
+    </div>
+</div>

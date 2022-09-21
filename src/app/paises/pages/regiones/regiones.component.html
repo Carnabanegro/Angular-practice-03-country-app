@@ -1,0 +1,27 @@
+<h2>Por Region</h2>
+
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <app-searcher 
+            (onSearch)="buscar($event)" 
+            placeholder = "Buscar por region"
+        ></app-searcher>
+
+    </div>
+</div>
+
+    
+
+<hr>
+
+<app-alert [error]="error" alerta="ningun pais de esa region" ></app-alert>
+
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+        <app-table [data] = "paises"></app-table>
+    </div>
+</div>
+
