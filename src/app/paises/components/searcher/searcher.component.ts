@@ -11,7 +11,7 @@ export class SearcherComponent implements OnInit {
 
   @Output() onSearch : EventEmitter<string> = new EventEmitter();
   @Output() onDebounce : EventEmitter<string> = new EventEmitter();
-  @Input() placeholder: string = ''
+  @Input() placeholder: string = '';
 
   debouncer: Subject<string> = new Subject;
 

@@ -1,0 +1,19 @@
+<form (ngSubmit)="buscar()" [formGroup]="form" class="form-group row justify-content-center align-content-center">
+
+    <div class="col-10">
+        <select formControlName="region" class="form-select" aria-label="Default select example">
+            <option disabled [ngValue] = null selected>Open this select menu</option>
+            <option *ngFor="let region of regiones" [ngValue]="region">{{region}}</option>
+        </select>
+    </div>
+
+    <div class="row col">
+
+        <button class="bg-dark rounded text-white" type="submit">Select</button>
+
+
+    </div>
+
+   
+</form>
+

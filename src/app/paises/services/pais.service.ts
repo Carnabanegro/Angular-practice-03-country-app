@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from '../../../environments/environment';
 import { Country} from '../interfaces/countrys.interface';
@@ -34,13 +34,19 @@ export class PaisService {
   buscarPorRegion(termino: string) : Observable<Country[]>{
 
     const query : string = `${environment.url}/region/${termino}` ;
+    
+    const params = new HttpParams().set('fields','name,population,flags,cca2');
 
-    return this.http.get<Country[]>(query);
+    return this.http.get<Country[]>(query, {params});
     
 
   }
 
   buscarPorId(termino: string) : Observable<Country>{
+
+    
+
+    
 
     const query : string = `${environment.url}/alpha/${termino}` ;
 

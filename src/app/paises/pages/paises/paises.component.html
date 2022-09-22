@@ -5,12 +5,25 @@
     <div class="col">
 
         <app-searcher 
+            (onDebounce)="sugerencias($event)"
             (onSearch)="buscar($event)" 
             placeholder = "Buscar por pais"
         ></app-searcher>
 
     </div>
 </div>
+
+<ul class="list-group pt-1">
+    
+    <li 
+        *ngFor="let sugerido of sugeridos"
+        class="list-group-item list-group-item-action"
+        >{{sugerido.name.common}}
+    </li>
+
+</ul>
+
+
 
     
 

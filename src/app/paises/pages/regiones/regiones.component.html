@@ -5,10 +5,12 @@
 <div class="row">
     <div class="col">
 
-        <app-searcher 
+        <app-select
             (onSearch)="buscar($event)" 
-            placeholder = "Buscar por region"
-        ></app-searcher>
+            placeholder = "Seleccione una region"
+            [regiones]="regiones"
+        ></app-select>
+
 
     </div>
 </div>

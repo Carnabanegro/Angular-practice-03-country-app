@@ -9,6 +9,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class RegionesComponent implements OnInit {
 
+  regiones : string[] = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
   input : string = '';
   error : boolean = false;
   paises: Country[] = [];
